@@ -1,10 +1,10 @@
 # The Docker image to run your workspace in. Defaults to gitpod/workspace-full
-image: <frolvlad/alpine-gxx>
+image:
+    file: codercom/code-server
 # Command to start on workspace startup (optional)
 tasks:
-  - init: yarn install
-    command: yarn build
+   - command: >
+        docker run -it -p 127.0.0.1:8443:8443 -v "${PWD}:file:///workspace/practice/cpp" codercom/code-server --allow-http --no-auth
 # Ports to expose on workspace startup (optional)
 ports:
   - port: 8000
-    onOpen: open-preview
