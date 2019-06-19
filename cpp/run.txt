@@ -1,0 +1,4 @@
+cd /${current.project.path} &&
+g++ ${editor.current.file.name} -o ${editor.current.file.basename}.exe
+
+g++   main.cpp  -o   main.exe   &&    ./main.exe
